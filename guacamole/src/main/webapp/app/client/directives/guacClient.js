@@ -337,7 +337,23 @@ angular.module('client').directive('guacClient', [function guacClient() {
                 if(autoFit)
                     $scope.client.clientProperties.scale = $scope.client.clientProperties.minScale;
             });
-            
+
+            /**
+             * Returns whether the currently-applied display scale is an
+             * integer. This will be the case if, for example, the remote
+             * display fits perfectly with a 1:1 pixel ratio within the browser
+             * window, if the browser window is exactly 2x the width/height of
+             * the display, etc.
+             *
+             * @returns {Boolean}
+             *     true if the currently-applied display scale is an integer,
+             *     false otherwise.
+             */
+            $scope.isIntegerScale = function isIntegerScale() {
+                var scale = $scope.client.clientProperties.scale;
+                return scale === Math.floor(scale);
+            };
+
             // If the element is resized, attempt to resize client
             $scope.mainElementResized = function mainElementResized() {
 

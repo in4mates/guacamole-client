@@ -1,6 +1,6 @@
 <div class="main" guac-resize="mainElementResized">
     <!--
-       Copyright (C) 2014 Glyptodon LLC
+       Copyright (C) 2015 Glyptodon LLC
 
        Permission is hereby granted, free of charge, to any person obtaining a copy
        of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,8 @@
     <div class="displayOuter">
 
         <div class="displayMiddle">
-            <div class="display software-cursor">
+            <div class="display software-cursor"
+                 ng-class="{'integer-scale' : isIntegerScale()}">
             </div>
         </div>
 
